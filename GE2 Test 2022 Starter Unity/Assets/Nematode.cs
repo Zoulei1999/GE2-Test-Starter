@@ -20,7 +20,7 @@ public class Nematode : MonoBehaviour{
             GameObject nematode = GameObject.CreatePrimitive(PrimitiveType.Sphere); //prints spheres
 
             nematode.transform.parent = this.transform;
-            nematode.transform.position = transform.position - (transform.forward * i);//setting position
+            nematode.transform.position = transform.position - (i * transform.forward);//setting position
             nematode.transform.rotation = transform.rotation;//setting rotation
             nematode.transform.localScale -= segmentSize;
 
