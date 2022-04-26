@@ -17,15 +17,15 @@ public class Nematode : MonoBehaviour{
 
         for (var i = 0; i < length; i++){//loop for the printing of segments
             
-            GameObject segments = GameObject.CreatePrimitive(PrimitiveType.Sphere); //prints spheres
+            GameObject nematode = GameObject.CreatePrimitive(PrimitiveType.Sphere); //prints spheres
 
-            segments.transform.parent = this.transform;
-            segments.transform.position = transform.position - (transform.forward * i);//setting position
-            segments.transform.rotation = transform.rotation;//setting rotation
-            segments.transform.localScale -= segmentSize;
+            nematode.transform.parent = this.transform;
+            nematode.transform.position = transform.position - (transform.forward * i);//setting position
+            nematode.transform.rotation = transform.rotation;//setting rotation
+            nematode.transform.localScale -= segmentSize;
 
-            segments.GetComponent<Renderer>().material = material;//rendering nematode material
-            segments.GetComponent<Renderer>().material.color = Color.HSVToRGB(i / (float)length, 1, 1);//setting colors
+            nematode.GetComponent<Renderer>().material = material;//rendering nematode material
+            nematode.GetComponent<Renderer>().material.color = Color.HSVToRGB(i / (float)length, 1, 1);//setting colors
 
             if (i > length/2){//checks if the segment is greater than halfway to either increase or decrease size of the segments
                 
@@ -56,4 +56,9 @@ public class Nematode : MonoBehaviour{
     {
         
     }
+
+    /* refernces used
+    https://docs.unity3d.com/ScriptReference/Color.HSVToRGB.html
+    https://docs.unity3d.com/ScriptReference/Transform-localScale.html
+    */
 }
